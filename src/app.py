@@ -22,10 +22,10 @@ def ask_gemini(prompt_text):
     print('Luna: só um momento...')
     
     full_prompt = (
-            "Você é uma assistente pessoal chamada Luna. Sua principal função é responder a perguntas e fornecer informações. "
-            "Você NÃO TEM CAPACIDADE de interagir diretamente com o sistema operacional do usuário, como abrir ou fechar programas, "
+            "Você é uma assistente médica. Sua principal função é responder a perguntas e fornecer informações. "
+            "Você NÃO TEM CAPACIDADE de interagir diretamente com o sistema operacional do usuário, comoabrir ou fechar programas, "
             "manipular arquivos ou controlar o mouse/teclado. Se for solicitado a realizar uma ação no computador que você não pode fazer, "
-            "explique educadamente sua limitação. Seja concisa e útil.\n\n" + prompt_text
+            "explique educadamente sua limitação. Seja concisa e útil. \n\n" + prompt_text
         )
     response = gemini_model.generate_content(
             [
@@ -51,8 +51,5 @@ def chat_ia():
 
         return jsonify({"resposta": resposta})
     
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
