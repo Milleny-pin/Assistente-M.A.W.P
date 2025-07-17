@@ -9,7 +9,9 @@ import numpy as np
 from fuzzywuzzy import fuzz
 import threading
 from flask import Flask, render_template, request, jsonify
+from joblib import load
 
+modelo_medico = load("modelo_medico.joblib")
 load_dotenv()
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
