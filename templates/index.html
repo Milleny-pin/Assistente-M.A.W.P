@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M.A.W.P</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
     <div id="chatContainer">
         <div id="chatHeader">
             <h2>M.A.W.P</h2>
         </div>
-        <div id="chatMessages"></div>
-        <div id="message bot">Olá, estou aqui para te ajudar, por favor, faça o upload de seu exame!</div>
-        <div id="loadingIndicator"><p>M.A.W.P está digitando...</p></div>
-        <form id="messageForm"><input type="text" id="UserInput" placeholder="Digite sua mensagem... " autocomplete="off"><button type="submit"
-            id="sendMessageBtn">Enviar</button></form>
+        <div id="chatMessages">
+            <div id="initialMessage" class="message bot">Olá, estou aqui para te ajudar! Por favor, faça o upload do seu exame para que eu possa analisá-lo.</div>
+        </div>
+        <div id="loadingIndicator" style="display: none;">
+            <p>M.A.W.P está digitando...</p>
+        </div>
+        <form id="messageForm">
+            <input type="file" id="fileInput" style="display: none;">
+            <label for="fileInput" id="fileLabel">Escolher arquivo</label>
+            <span id="fileNameDisplay">Nenhum arquivo selecionado</span>
+            <input type="text" id="userInput" placeholder="Digite sua mensagem..." autocomplete="off" disabled>
+            <button type="submit" id="sendMessageBtn" disabled>Enviar</button>
+        </form>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>

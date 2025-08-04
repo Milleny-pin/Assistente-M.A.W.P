@@ -4,17 +4,16 @@ from joblib import dump
 import pandas as pd
 
 
-# Ler os dados
-dados = pd.read_csv("exames.csv")
+dados = pd.read_csv("exames_completos.xlxs")
 
-# Separar dados entre o que ele vai aprender e o que ele vai prever
+
 x = dados.drop("diagnostico", axis=1)
 y = dados[["diagnostico"]]
 
-# Treinar o modelo
 modelo = DecisionTreeClassifier()
 modelo.fit(x, y)
 
-# Salvar o modelo
+
 dump(modelo, "modelo_medico.joblib")
+print("✅ Modelo treinado e salvo como 'modelo_medico.joblib'")
 
